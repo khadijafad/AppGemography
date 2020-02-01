@@ -1,14 +1,20 @@
-# App
+# AppGemography
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.24.
+
+## Technologies used
+### Front-end technology 
+Angular
+### Libraries
+Material Icons : Material design icon font and CSS framework for self hosting the icons.
+
+NGX Logger : simple logging module for angular. It allows "pretty print" to the console.
+
+ngx-infinite-scroll : module for pagination
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
 
@@ -22,6 +28,6 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Git
+### git-flow :
+is a git branching and release management workflow that helps developers keep track of features, hotfixes and releases in bigger software projects.
