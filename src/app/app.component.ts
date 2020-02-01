@@ -13,6 +13,7 @@ export class AppComponent implements OnInit {
   repositories: any[] = [];
   private currentPage = 1;
   private repositoriesCreationDate = '';
+  isLoading = true;
 
   constructor(private httpClient: HttpClient, private datePipe: DatePipe, private logger: NGXLogger) {
     // Set repositories creation date
@@ -25,6 +26,7 @@ export class AppComponent implements OnInit {
   }
 
   private loadRepositories() {
+    this.isLoading = true;
     this.getRepositories(
       this.repositoriesCreationDate,
       this.currentPage,
@@ -36,6 +38,7 @@ export class AppComponent implements OnInit {
         this.logger.error(error);
       },
       () => {
+        this.isLoading = false;
       });
   }
 
@@ -49,6 +52,7 @@ export class AppComponent implements OnInit {
         this.logger.debug(requestUrl);
       })
     ).subscribe((repositories: any[]) => {
+      this.currentPage++;
       successCallback(repositories);
     }, (error) => {
       this.logger.error(error);
@@ -64,5 +68,10 @@ export class AppComponent implements OnInit {
     const diffTime = Math.abs(date.getTime() - today.getTime());
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
     return diffDays;
+  }
+  onScroll() {
+    if (!this.isLoading) {
+      this.loadRepositories();
+    }
   }
 }
