@@ -10,6 +10,7 @@ import {NGXLogger} from 'ngx-logger';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+  title = 'AppGemography';
   repositories: any[] = [];
   private currentPage = 1;
   private repositoriesCreationDate = '';
