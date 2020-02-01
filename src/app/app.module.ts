@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import {HttpClientModule} from '@angular/common/http';
 import {DatePipe} from '@angular/common';
 import {LoggerModule, NgxLoggerLevel} from 'ngx-logger';
+import {InfiniteScrollModule} from 'ngx-infinite-scroll';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import {LoggerModule, NgxLoggerLevel} from 'ngx-logger';
     HttpClientModule,
     LoggerModule.forRoot({serverLoggingUrl: '/api/logs',
       level: NgxLoggerLevel.DEBUG,
-      serverLogLevel: NgxLoggerLevel.ERROR})
+      serverLogLevel: NgxLoggerLevel.ERROR}),
+    InfiniteScrollModule
 ],
   providers: [
     DatePipe
